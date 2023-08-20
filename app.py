@@ -90,7 +90,7 @@ def predictTweets(example):
 #..............................
 ## menu bar
 st.set_page_config(
-        page_title="WelCome To FakeNewsDetector",
+        page_title="WelCome To TrustTrace",
         page_icon="book",
         layout="wide",
     )
@@ -117,9 +117,9 @@ selected = option_menu(
 )
 # home..............................
 if selected == "Home":
-    st.title("Fake news detector")
-    st.text("Hi Detector will give you the Output as Fake and Real News")
-    text = st.text_input("Enter The News To Detect")
+    st.title("Welcome to TrustTrace")
+    st.text("Hi Detector will give you the Output as this post is trustable or not")
+    text = st.text_input("Enter The post To Check")
     b1=st.button("Detect")
     chances = predictTweets(text)
     true = 0
@@ -131,7 +131,7 @@ if selected == "Home":
         st.text("Chances of being false = {:0.2f} %.\n".format(false))
 
     # Image Based Create a file uploader widget
-    st.title("Detect From  Image")
+    st.title("Check From  Image")
     uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
     if uploaded_file is not None:
